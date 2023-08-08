@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="54dp"
+    app:strokeWidth="0dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="24dp">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/text_title_add_ingredient"
+            style="@style/mainText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:lineSpacingExtra="5sp"
+            android:lines="1"
+            android:text="@string/add_ingredient"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            app:autoSizeTextType="uniform"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/container_edittext_name"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:hint="@string/title"
+            android:nextFocusDown="@id/container_edittext_desc"
+            android:textColorHint="@color/selector_stroke_authorization"
+            app:boxBackgroundColor="@color/white"
+            app:boxCornerRadiusBottomEnd="20dp"
+            app:boxCornerRadiusBottomStart="20dp"
+            app:boxCornerRadiusTopEnd="20dp"
+            app:boxCornerRadiusTopStart="20dp"
+            app:boxStrokeColor="@color/selector_stroke_authorization"
+            app:endIconMode="clear_text"
+            app:hintTextColor="@color/selector_stroke_authorization"
+            app:layout_constraintTop_toBottomOf="@id/text_title_add_ingredient">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edittext_name"
+                style="@style/auth_edit_text_back"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="username"
+                android:inputType="text"
+                android:maxLines="1" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_add_ingredient"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/add"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            app:backgroundTint="#4B97FF"
+            app:layout_constraintTop_toBottomOf="@id/container_edittext_name" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_cancel"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_weight="1"
+            android:text="@string/cancel"
+            android:textColor="#4B97FF"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/button_add_ingredient"
+            app:strokeColor="#4B97FF" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

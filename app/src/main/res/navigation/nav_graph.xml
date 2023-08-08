@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/CocktailsFragment">
+
+    <fragment
+        android:id="@+id/CocktailsFragment"
+        android:name="com.kingofraccoons.cocktailbar.ui.cocktails.CocktailsFragment"
+        tools:layout="@layout/fragment_cocktails">
+
+        <action
+            android:id="@+id/action_CocktailsFragment_to_AddCocktailFragment"
+            app:destination="@id/AddCocktailFragment" />
+        <action
+            android:id="@+id/action_CocktailsFragment_to_detailCocktailFragment"
+            app:destination="@id/detailCocktailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/AddCocktailFragment"
+        android:name="com.kingofraccoons.cocktailbar.ui.addcocktail.AddCocktailFragment"
+        tools:layout="@layout/fragment_add_cocktail">
+        <argument
+            android:name="cocktailId"
+            app:argType="org.bson.types.ObjectId"
+            app:nullable="true"/>
+    </fragment>
+    <fragment
+        android:id="@+id/detailCocktailFragment"
+        android:name="com.kingofraccoons.cocktailbar.ui.detailcocktail.DetailCocktailFragment"
+        android:label="fragment_detail_cocktail"
+        tools:layout="@layout/fragment_detail_cocktail" >
+        <argument
+            android:name="idCocktail"
+            app:argType="org.bson.types.ObjectId" />
+        <action
+            android:id="@+id/action_detailCocktailFragment_to_AddCocktailFragment"
+            app:destination="@id/AddCocktailFragment" />
+    </fragment>
+</navigation>

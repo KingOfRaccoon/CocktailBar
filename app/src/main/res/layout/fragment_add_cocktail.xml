@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="24dp">
+
+        <androidx.constraintlayout.utils.widget.ImageFilterView
+            android:id="@+id/image_load_image"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="86dp"
+            android:background="@color/imageTintColor"
+            android:padding="80dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_camera"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:roundPercent="0.5" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/container_edittext_title"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:hint="@string/title"
+            android:nextFocusDown="@id/container_edittext_desc"
+            android:textColorHint="@color/selector_stroke_authorization"
+            app:boxBackgroundColor="@color/white"
+            app:boxCornerRadiusBottomEnd="20dp"
+            app:boxCornerRadiusBottomStart="20dp"
+            app:boxCornerRadiusTopEnd="20dp"
+            app:boxCornerRadiusTopStart="20dp"
+            app:boxStrokeColor="@color/selector_stroke_authorization"
+            app:endIconMode="clear_text"
+            app:hintTextColor="@color/selector_stroke_authorization"
+            app:layout_constraintTop_toBottomOf="@id/image_load_image">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edittext_title"
+                style="@style/auth_edit_text_back"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="username"
+                android:inputType="text"
+                android:maxLines="1" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/container_edittext_desc"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:hint="@string/desc"
+            android:textColorHint="@color/selector_stroke_authorization"
+            app:boxBackgroundColor="@color/white"
+            app:boxCornerRadiusBottomEnd="20dp"
+            app:boxCornerRadiusBottomStart="20dp"
+            app:boxCornerRadiusTopEnd="20dp"
+            app:boxCornerRadiusTopStart="20dp"
+            app:boxStrokeColor="@color/selector_stroke_authorization"
+            app:endIconMode="clear_text"
+            app:helperText="Optional field"
+            app:helperTextEnabled="true"
+            app:hintTextColor="@color/selector_stroke_authorization"
+            app:layout_constraintTop_toBottomOf="@id/container_edittext_title">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edittext_desc"
+                style="@style/auth_edit_text_back"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="username"
+                android:inputType="text"
+                android:maxLines="1" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chip_group_ingredients"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            app:chipSpacingHorizontal="9dp"
+            app:chipSpacingVertical="3dp"
+            app:layout_constraintTop_toBottomOf="@id/container_edittext_desc"
+            app:singleLine="false">
+
+            <com.google.android.material.chip.Chip xmlns:tools="http://schemas.android.com/tools"
+                android:id="@+id/chip_add_chip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:checkedIconEnabled="false"
+                app:chipBackgroundColor="@color/addChipColor"
+                app:chipCornerRadius="16dp"
+                app:chipIcon="@drawable/ic_add"
+                app:chipIconEnabled="true"
+                app:iconEndPadding="0dp"
+                app:iconStartPadding="0dp"
+                app:textEndPadding="0dp"
+                app:textStartPadding="0dp"
+                tools:text="World Skills" />
+        </com.google.android.material.chip.ChipGroup>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/container_edittext_recipe"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:hint="@string/recipe"
+            android:textColorHint="@color/selector_stroke_authorization"
+            app:boxBackgroundColor="@color/white"
+            app:boxCornerRadiusBottomEnd="20dp"
+            app:boxCornerRadiusBottomStart="20dp"
+            app:boxCornerRadiusTopEnd="20dp"
+            app:boxCornerRadiusTopStart="20dp"
+            app:boxStrokeColor="@color/selector_stroke_authorization"
+            app:endIconMode="clear_text"
+            app:helperText="Optional field"
+            app:helperTextEnabled="true"
+            app:hintTextColor="@color/selector_stroke_authorization"
+            app:layout_constraintTop_toBottomOf="@id/chip_group_ingredients">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edittext_recipe"
+                style="@style/auth_edit_text_back"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="username"
+                android:inputType="text"
+                android:maxLines="1" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_save"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/save"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            app:backgroundTint="#4B97FF"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/container_edittext_recipe" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_cancel_save"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:layout_weight="1"
+            android:text="@string/cancel"
+            android:textColor="#4B97FF"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/button_save"
+            app:strokeColor="#4B97FF" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

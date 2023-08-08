@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginTop="24dp"
+    android:layout_marginBottom="21dp"
+    android:fillViewport="true"
+    tools:context=".ui.cocktails.CocktailsFragment">
+
+    <ImageView
+        android:id="@+id/image_title"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="22dp"
+        android:layout_marginTop="9dp"
+        android:src="@drawable/summer_holidays_1"
+        app:layout_constraintBottom_toTopOf="@id/text_title"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/text_title"
+        style="@style/mainText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="22dp"
+        android:layout_marginTop="15dp"
+        android:gravity="center_horizontal"
+        android:text="@string/my_cocktails"
+        android:textSize="36sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/image_title" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/text_create_cocktail"
+        style="@style/secondText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="22dp"
+        android:layout_marginTop="32dp"
+        android:drawableBottom="@drawable/arrow_bottom"
+        android:drawablePadding="16dp"
+        android:gravity="center"
+        android:text="@string/create_cocktail"
+        android:textSize="21sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_title" />
+
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:id="@+id/button_add_cocktail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="10dp"
+        android:background="#4B97FF"
+        android:clickable="true"
+        android:elevation="3dp"
+        android:foreground="?android:attr/selectableItemBackgroundBorderless"
+        android:minWidth="80dp"
+        android:minHeight="80dp"
+        android:padding="20dp"
+        android:src="@drawable/ic_add"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_create_cocktail"
+        app:roundPercent="1.0" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_cocktails"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="24dp"
+        android:visibility="gone"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_title"
+        app:spanCount="2"
+        tools:itemCount="10"
+        tools:listitem="@layout/item_cocktail" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_share"
+        android:visibility="gone"
+        android:src="@drawable/ic_share"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
