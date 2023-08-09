@@ -6,3 +6,5 @@
 + Для работы с навигацией - Jetpack Navigation Ktx
 
 Использовалась архитектура - MVVM
+
+[Видео](https://github.com/KingOfRaccoon/CocktailBar/blob/master/telegram-cloud-document-2-5375177937748242736.mp4)
