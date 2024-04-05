@@ -49,7 +49,7 @@ class AddCocktailFragment : Fragment() {
     }
     private var imageUri = ""
 
-    private var getImages = registerForActivityResult<String, Uri>(
+    private var getImages = registerForActivityResult(
         ActivityResultContracts.GetContent()
     ) { uri ->
         CropImage.activity(uri)
@@ -78,7 +78,9 @@ class AddCocktailFragment : Fragment() {
         }
 
         binding.imageLoadImage.setOnClickListener {
-            getImages.launch("image/*")
+            getImages.launch("image/*"
+//                PickVisualMediaRequest(ActivityResultContracts.PickVisualMedia.ImageOnly)
+            )
         }
 
         binding.buttonSave.setOnClickListener {
@@ -89,7 +91,8 @@ class AddCocktailFragment : Fragment() {
             } else {
                 viewModel.addCocktail(
                     Cocktail(
-                        viewModel.cocktailsLiveData.value?.find { it.id == args.cocktailId }?.id ?:ObjectId(),
+                        viewModel.cocktailsLiveData.value?.find { it.id == args.cocktailId }?.id
+                            ?: ObjectId(),
                         binding.edittextTitle.text.toString().trim(),
                         binding.edittextDesc.text.toString().trim(),
                         RealmList(*ingredientsLiveData.value.orEmpty().toTypedArray()),
@@ -108,9 +111,11 @@ class AddCocktailFragment : Fragment() {
         if (args.cocktailId != null)
             viewModel.cocktailsLiveData.observe(viewLifecycleOwner) {
                 it.find { it.id == args.cocktailId }?.let {
-                    binding.edittextTitle.text = Editable.Factory.getInstance().newEditable(it.title)
+                    binding.edittextTitle.text =
+                        Editable.Factory.getInstance().newEditable(it.title)
                     binding.edittextDesc.text = Editable.Factory.getInstance().newEditable(it.desc)
-                    binding.edittextRecipe.text = Editable.Factory.getInstance().newEditable(it.recipe)
+                    binding.edittextRecipe.text =
+                        Editable.Factory.getInstance().newEditable(it.recipe)
                     it.ingredients.forEachIndexed { index, s ->
                         if (index != it.ingredients.lastIndex)
                             addChip(s)
